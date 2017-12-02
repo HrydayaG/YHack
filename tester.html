@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Paste your job posting below...</p>
+
+    <input type="text" id="searchForm" placeholder="Paste your Job Posting here" >
+    
+<button onclick="searchWords()">Try it</button>
+
+<p id="FinalText"></p>
+
+<script>
+function searchWords() {
+    var jobText = document.getElementById("searchForm").value;
+    var word = jobText.toLowerCase();
+    var n = word.search("softweare");
+    document.getElementById("FinalText").innerHTML = n;
+}
+
+    function wordsToCheck(){
+            var industry=['software','accounting','sales','marketing','engineering','teaching'];
+            var softskills=['leadership','communication','independant','energetic','humor'];
+            var industryLocos;
+            var softskillsLocos;
+            var techskillssoftware=['programming languages','databases','technologies'];
+            var i;
+            var k;
+            for (i=0; i<industry.length();i++){
+                 if (searchWords(industry[i])){
+                   industryLocos[i]=i;
+                 }else{
+                      industryLocos[i]=0;
+                 }    
+            }
+                 
+          for (k=0,k<softskills.length(),k++){
+              if(searchWords(softskills[k])){
+                  softskillsLocos[k]=k;
+              }else{
+                  softskillsLocos[k]=0;
+              }
+            }
+        na= industry[1];
+         document.getElementById("FinalText").innerHTML = na;
+    }
+    
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>A demonstration of how to access a Text Field</h3>
+
+<input type="text" id="searchForm" placeholder="Paste your Job Posting here" >
+
+<p>Click the "Submit" button once you have pasted you job posting...</p>
+
+<button onclick="wordsToCheck()">Try it</button>
+    
+<p id="search1Text">
+    
+</p>
+
+<script>
+  
+function searchWords(dictionary) {
+    var x = document.getElementById("searchForm").value;
+    
+    document.getElementById("searchText").innerHTML = x;
+
+    var word = x.toLowerCase();
+    var dictionary;
+    var flag = 0;
+    for(var i = 0; i < dictionary.length(); i++) {
+        if(dictionary[i] == word) {
+            return true;
+            break;
+        }
+    }
+    if(flag == 0){
+    return false;
+    }
+}
+
+        function wordsToCheck(){
+            var industry=['software','accounting','sales','marketing','engineering','teaching'];
+            var softskills=['leadership','communication','independant','energetic','humor'];
+            var industryLocos;
+            var softskillsLocos;
+            var techskillssoftware=['programming languages','databases','technologies'];
+            var i;
+            var k;
+            for (i=0; i<industry.length();i++){
+                 industryLocos[i]=searchWords(industry);
+            }
+                 }
+          for (k=0,k<softskills.length(),k++){
+                softskillsLocos[k]=searchWords(softskills);
+            }
+
+        }
+         document.getElementById("search1Text").innerHTML = industry[];
+    </script>
+    
+    
+
+</body>
+</html>

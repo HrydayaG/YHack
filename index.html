@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Paste your job posting below...</p>
+    
+<input type="text" id="searchForm" placeholder="Paste your Job Posting here" >
+
+<button onclick="findValues()">Try it</button>
+
+<script>
+function searchWords(jobText) {
+    var jobText1 = document.getElementById("searchForm").value;
+
+    var n = jobText1.search(jobText);
+    if (n>-1){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+    function findValues(){
+    var industry=['software','accounting','sales','marketing','engineering','teaching'];
+    var softskills=['leadership','communication','independant','energetic','humor'];
+    var industryLocos=['0','0','0','0','0','0'];
+    var softskillsLocos=['0','0','0','0','0'];
+    var techskillssoftware=['programming languages','databases','technologies'];
+    var i;
+    var k;
+    for (i=0; i<6;i++){
+        if (searchWords(industry[i])==true){
+            industryLocos[i]=i+1;
+        }else{
+            industryLocos[i]='0';
+        }    
+    }
+    for (k=0;k<4;k++){
+        if(searchWords(softskills[k])==true){
+            softskillsLocos[k]=k+1;
+        }else{
+            softskillsLocos[k]='0';
+        }
+    }
+
+} 
+    </script>
+
+</body>
+</html>
