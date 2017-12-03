@@ -1,0 +1,33 @@
+.jumbotron{
+    text-align: center;
+    font-family: 'Quicksand', sans-serif !important;
+    background-color: deepskyblue;
+    padding-left: 0px;   
+}
+
+.job-description-header, .resume-header{
+    font-family: 'Quicksand', sans-serif !important;
+    text-align: center;
+}
+
+#exampleFormControlTextarea1{
+    max-height: 500px ;
+    max-width: 675px ;
+}
+
+textarea{
+    
+    max-height: 125px ;
+    max-width: 655px ;
+}
+
+
+#submit-button{
+    margin-left: 275px;
+}
+
+#submit-button1{
+    margin-left: 275px;
+}
+
+

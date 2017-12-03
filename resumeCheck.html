@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resumeCheck.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <script>
+function searchWords(jobText) {
+    var jobText1 = document.getElementById("exampleFormControlTextarea1").value;
+    var n = jobText1.search(jobText);
+    if (n>-1){
+        return true;
+    }else{
+        return false;
+    }
+    }
+        
+var industry=['software','accounting','sales','marketing','engineering','teaching'];
+    var softskills=['leadership','communication','independant','energetic','humor'];
+    var techskillssoftware=['programming languages','databases','technologies'];
+        var experience='Indicate work experience you have related to ';
+        var techskill='Write about personal projects, focus on projects that used ';
+        var softskill='Highlight times when you displayed ';
+    function findValues(){
+    var i;
+    var k;
+        var j=0;
+        var l=0;
+    for (i=0; i<6;i++){
+        if (searchWords(industry[i])==true){
+            experience+=industry[i];
+            techskill+=techskillssoftware[i];
+            j++;
+        }if(j=0){
+            experience='Indicate work experience relevent to the job you are applying for.';
+            techskill='Wrtie about personal projects, and mention any technologies you used';
+        }
+        
+    }
+    for (k=0;k<4;k++){
+        if(searchWords(softskills[k])==true){
+            softskill+=softskills[k];
+            l++;
+        }if(l=0){
+            softskill='Highlight times when you showed comminication and leadership skills.';
+        }
+    }
+        document.getElementById("demo").innerHTML = experience;
+        document.getElementById("demo2").innerHTML = techskill;
+        document.getElementById("demo3").innerHTML = softskill;
+        
+
+} 
+       
+    </script>
+
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1><strong>Resume Helper</strong></h1>
+    <p><strong>Upload your job description on the left and your resume on the right.</strong></p>
+  </div>
+    
+    <div class="col-lg-6">
+        <h2 class="job-description-header">Job Description</h2>
+        <p id="demo"></p>
+        <form> 
+            <div class="form-group col-lg-12">
+            <label for="exampleFormControlTextarea1"></label>
+           <textarea class="form-control" id="exampleFormControlTextarea1" rows="25" id="job-box"></textarea>
+                <br>
+                <button type="button" class="btn btn-success btn-lg" id="submit-button1">Submit!</button>
+        </div>
+        </form>
+     
+    </div>
+    
+    
+      <div class="col-lg-6">
+          
+         <h2 class="resume-header">Resume</h2>
+        <form> 
+            <div class="form-group col-lg-12">
+            <div class="container-fluid">
+  
+    <br>
+    <!--------------- Work exp --------------->
+    <h4 class="work-exp-one" ><strong>Indicate your work experience</strong></h4>
+    <br>
+    <form>
+        <div class="form-group">
+            <label for="inputsm">Position One:</label>
+            <input class="form-control input-sm" id="position-one" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputsm">Location of Workplace:</label>
+            <input class="form-control input-sm" id="location-workplace-one" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>(Format: MM/YYYY) - (MM/YYYY)):</i></label>
+            <input class="form-control" id="work-duration-one" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>Mention details highlighting your experience there: </i></label>
+            <input class="form-control" id="work-details" type="text">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea5">Brief Description:</label>
+           <textarea class="form-control" id="exampleFormControlTextarea" rows="25" id="projects-box-one"></textarea>
+        </div>
+        
+    </form>
+    <br>
+    
+        <!--------------- Work exp 2 --------------->
+    <form>
+        <div class="form-group">
+            <label for="inputsm">Position Two:</label>
+            <input class="form-control input-sm" id="position-two" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputsm">Location of Workplace:</label>
+            <input class="form-control input-sm" id="location-workplace-two" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>(Format: MM/YYYY) - (MM/YYYY)):</i></label>
+            <input class="form-control" id="work-duration-two" type="text">
+            </div>
+            <div class="form-group">
+            <label for="inputdefault">Duration <i>Mention details highlighting your experience there: </i></label>
+            <input class="form-control" id="work-details2" type="text">
+        </div>
+            <div class="form-group">
+            <label for="exampleFormControlTextarea4">Brief Description:</label>
+           <textarea class="form-control" id="exampleFormControlTextarea" rows="25" id="projects-box-one"></textarea>
+        </div>
+        
+    </form>
+    
+    <br>
+        <!--------------- Work exp 3 --------------->
+    <form>
+        <div class="form-group">
+            <label for="inputsm">Position Three:</label>
+            <input class="form-control input-sm" id="position-three" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputsm">Location of Workplace:</label>
+            <input class="form-control input-sm" id="location-workplace-three" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>(Format: MM/YYYY) - (MM/YYYY)):</i></label>
+            <input class="form-control" id="work-duration-three" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>Mention details highlighting your experience there: </i></label>
+            <input class="form-control" id="work-details3" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleFormControlTextarea">Brief Description:</label>
+           <textarea class="form-control" id="exampleFormControlTextarea3" rows="25" id="projects-box-one"></textarea>
+        </div>
+        
+    </form>
+    
+        <!--------------- University  --------------->
+    <br>
+    <h4 class="work-exp-one"><strong>Which university do you attend?</strong></h4>
+    <br>
+    
+        <form>
+        <div class="form-group">
+            <label for="inputsm">Name of University:</label>
+            <input class="form-control input-sm" id="uni-name" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputsm">Location of University:</label>
+            <input class="form-control input-sm" id="location-uni" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>(Format: MM/YYYY) - (MM/YYYY)):</i></label>
+            <input class="form-control" id="uni-duration" type="text">
+        </div>
+    </form>
+    
+        <!--------------- Vol 1 --------------->
+    <br>
+    <h4 class="work-exp-one"><strong>Volunteer Experiences:</strong></h4>
+    <br>
+    
+    <form>
+        <div class="form-group">
+            <label for="inputsm">Volunteer Role:</label>
+            <input class="form-control input-sm" id="vol-role-one" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputsm">Location:</label>
+            <input class="form-control input-sm" id="location-vol-one" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>(Format: MM/YYYY) - (MM/YYYY)):</i></label>
+            <input class="form-control" id="vol-duration-one" type="text">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea">Brief Description:</label>
+           <textarea class="form-control" id="exampleFormControlTextarea1" rows="25" id="projects-box-one"></textarea>
+        </div>
+    </form>
+    <br>
+    
+        <!--------------- Vol 2 --------------->
+    <form>
+        <div class="form-group">
+            <label for="inputsm">Volunteer Role:</label>
+            <input class="form-control input-sm" id="vol-role-two" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputsm">Location:</label>
+            <input class="form-control input-sm" id="location-vol-two" type="text">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>(Format: MM/YYYY) - (MM/YYYY)):</i></label>
+            <input class="form-control" id="vol-duration-two" type="text">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea2">Brief Description:</label>
+           <textarea class="form-control" id="exampleFormControlTextarea" rows="25" id="projects-box-one"></textarea>
+        </div>
+    </form>
+    
+        <!--------------- Personal Projects 1 --------------->
+     <h4 class="work-exp-one"><strong>Projects:</strong></h4>
+    <br>
+    
+      <form>
+        <div class="form-group">
+            <label for="inputsm">Name of Project:</label>
+            <input class="form-control input-sm" id="personal-projects-one" type="text">
+        </div>
+        
+    
+        <div class="form-group">
+            <label for="exampleFormControlTextarea">Brief Description:</label>
+           <textarea class="form-control" id="exampleFormControlTextarea" rows="25" id="projects-box-one"></textarea>
+        </div>
+    
+        
+        <div class="form-group">
+            <label for="inputdefault">Duration <i>(Format: MM/YYYY) - (MM/YYYY)):</i></label>
+            <input class="form-control" id="vol-duration-two" type="text">
+        </div>
+    </form>
+    
+    
+
+    </div>
+        </div>
+        </form>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+
