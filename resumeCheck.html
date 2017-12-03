@@ -95,6 +95,11 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
         counter++;
         }
 } 
+        function resume(){
+            var resumefinal="Sample Resume"+'<br>'+document.getElementById("position-one").value + "<br> "+ document.getElementById("location-workplace-one").value+"<br>"+document.getElementById("work-duration-one").value+'<br>'+document.getElementById("exampleFormControlTextarea").value+ "<br>"+document.getElementById("uni-name").value+"<br>"+document.getElementById("location-uni").value+"<br>"+document.getElementById("uni-duration").value+"<br>"+document.getElementById("vol-role-one").value+"<br>"+document.getElementById("location-vol-one").value+"<br>"+document.getElementById("vol-duration-one").value+"<br>"+document.getElementById("exampleFormControlTextarea11").value
+            
+                 document.getElementById("ressume").innerHTML = resumefinal;
+        }
        
     </script>
 
@@ -112,10 +117,12 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
             <label for="exampleFormControlTextarea1"></label>
            <textarea class="form-control" id="exampleFormControlTextarea1" rows="25" id="job-box" onclick="findValues()"></textarea>
                 <br>
-                <button type="button" class="btn btn-success btn-lg" id="submit-button1">Submit!</button>
+                
+                <br>
+                <br>
+                <p id="ressume"></p>
         </div>
         </form>
-     
     </div>
     
     
@@ -133,12 +140,12 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
     <br>
     <form>
         <div class="form-group">
-            <label for="inputsm">Position One:</label>
+            <label for="inputsm" >Position One:</label>
             <input class="form-control input-sm" id="position-one" type="text">
         </div>
         
         <div class="form-group">
-            <label for="inputsm">Location of Workplace:</label>
+            <label for="inputsm" >Location of Workplace:</label>
             <input class="form-control input-sm" id="location-workplace-one" type="text">
         </div>
         
@@ -316,9 +323,12 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
 
     </div>
         </div>
+            <button type="button" class="btn btn-success btn-lg" id="submit-button1" onclick="resume()">Submit!</button>
+            <br>
+            <br>
+            
         </form>
     </div>
-    
 
     </div>
 </body>
