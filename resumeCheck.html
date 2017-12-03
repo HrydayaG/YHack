@@ -12,9 +12,11 @@
 <body>
     
     <script>
+        var counter=0;
 function searchWords(jobText) {
     var jobText1 = document.getElementById("exampleFormControlTextarea1").value;
-    var n = jobText1.search(jobText);
+    var jobtest2=jobText1.toLowerCase();
+    var n = jobtest2.search(jobText);
     if (n>-1){
         return true;
     }else{
@@ -25,38 +27,73 @@ function searchWords(jobText) {
 var industry=['software','accounting','sales','marketing','engineering','teaching'];
     var softskills=['leadership','communication','independant','energetic','humor'];
     var techskillssoftware=['programming languages','databases','technologies'];
+        var techskillssales=['MS Office','Visio'];
+        var techskillsacc=['MS Office','Visio', 'R'];
+        var techskillsmark=['MS Word','MS Excel'];
+        var techskillseng=['MS Office','programming', 'AutoCAD'];
+        var techskillsteach=['MS Office','Visio','outlook'];
         var experience='Indicate work experience you have related to ';
-        var techskill='Write about personal projects, focus on projects that used ';
+        var techskill='Personal Projects, focus on projects that used ';
         var softskill='Highlight times when you displayed ';
     function findValues(){
+       counter++;
+        if (counter<5){
+        
     var i;
     var k;
-        var j=0;
-        var l=0;
+        var j;
+        var l;
     for (i=0; i<6;i++){
         if (searchWords(industry[i])==true){
-            experience+=industry[i];
-            techskill+=techskillssoftware[i];
-            j++;
-        }if(j=0){
-            experience='Indicate work experience relevent to the job you are applying for.';
-            techskill='Wrtie about personal projects, and mention any technologies you used';
+            experience+=industry[i]+', ';
+
+            if (i==0){
+                for (j=0;j<3;j++){
+                techskill+=techskillssoftware[j]+', ';
+                }
+            }
+            if (i==1){
+                for (j=0;j<2;j++){
+                techskill+=techskillsacc[j]+', ';
+                }
+            }
+             if (i==2){
+                for (j=0;j<2;j++){
+                techskill+=techskillssales[j]+', ';
+                }
+            }
+             if (i==3){
+                for (j=0;j<2;j++){
+                techskill+=techskillsmark[j]+', ';
+                }
+            }
+             if (i==4){
+                for (j=0;j<3;j++){
+                techskill+=techskillseng[j]+', ';
+                }
+            }
+             if (i==5){
+                for (j=0;j<3;j++){
+                techskill+=techskillsteach[j]+', ';
+                }
+            }
         }
+        
         
     }
     for (k=0;k<4;k++){
         if(searchWords(softskills[k])==true){
-            softskill+=softskills[k];
+            softskill+=softskills[k]+', ';
             l++;
-        }if(l=0){
-            softskill='Highlight times when you showed comminication and leadership skills.';
         }
     }
         document.getElementById("demo").innerHTML = experience;
         document.getElementById("demo2").innerHTML = techskill;
         document.getElementById("demo3").innerHTML = softskill;
-        
-
+            document.getElementById("demo4").innerHTML = softskill;
+            document.getElementById("demo5").innerHTML = softskill;
+        counter++;
+        }
 } 
        
     </script>
@@ -69,11 +106,11 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
     
     <div class="col-lg-6">
         <h2 class="job-description-header">Job Description</h2>
-        <p id="demo"></p>
+        
         <form> 
             <div class="form-group col-lg-12">
             <label for="exampleFormControlTextarea1"></label>
-           <textarea class="form-control" id="exampleFormControlTextarea1" rows="25" id="job-box"></textarea>
+           <textarea class="form-control" id="exampleFormControlTextarea1" rows="25" id="job-box" onclick="findValues()"></textarea>
                 <br>
                 <button type="button" class="btn btn-success btn-lg" id="submit-button1">Submit!</button>
         </div>
@@ -91,7 +128,8 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
   
     <br>
     <!--------------- Work exp --------------->
-    <h4 class="work-exp-one" ><strong>Indicate your work experience</strong></h4>
+    <h4 class="work-exp-one" id="demo"><strong ></strong></h4>
+                <p id="demo3"></p>
     <br>
     <form>
         <div class="form-group">
@@ -203,6 +241,7 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
         <!--------------- Vol 1 --------------->
     <br>
     <h4 class="work-exp-one"><strong>Volunteer Experiences:</strong></h4>
+                <p id="demo4"></p>
     <br>
     
     <form>
@@ -222,7 +261,7 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea">Brief Description:</label>
-           <textarea class="form-control" id="exampleFormControlTextarea1" rows="25" id="projects-box-one"></textarea>
+           <textarea class="form-control" id="exampleFormControlTextarea11" rows="25" id="projects-box-one"></textarea>
         </div>
     </form>
     <br>
@@ -250,7 +289,8 @@ var industry=['software','accounting','sales','marketing','engineering','teachin
     </form>
     
         <!--------------- Personal Projects 1 --------------->
-     <h4 class="work-exp-one"><strong>Projects:</strong></h4>
+     <h4 class="work-exp-one" id="demo2"><strong></strong></h4>
+                <p id="demo5"></p>
     <br>
     
       <form>
